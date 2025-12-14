@@ -27,17 +27,18 @@ This project splits large `.ply` LiDAR point clouds into **local perception wind
 
 ---
 
-**How It Works**
-1. Load Point Cloud
+## How It Works
+
+1. **Load Point Cloud**
 
 Reads a .ply file and extracts XYZ coordinates into a NumPy array.
 
-2. Scene Chunking
+2. **Scene Chunking**
 
 The large LiDAR scan is split into smaller, overlapping local windows in the X–Y plane.
 Each window represents a region a robot would process at one time.
 
-3. Ground vs. Objects
+3. **Ground vs. Objects**
 
 For each chunk:
 
@@ -49,7 +50,7 @@ This split is for visual clarity, not semantic labeling
 
 ---
 
-**Visualization Notes**
+## Visualization Notes**
 
 LiDAR data is inherently 3D.
 Static images often hide depth and geometry, so this project emphasizes runtime interactive visualization.
@@ -64,7 +65,7 @@ Adjust configuration parameters if needed
 
 ---
 
-**Project Structure**
+## Project Structure
 .
 ├── lidar_scene_chunk_dashboard.py   # Main script
 ├── lidar_dataset1/                  # Input LiDAR .ply files
@@ -86,5 +87,5 @@ Install dependencies:
 
 ```bash
 pip install numpy pyvista plyfile
-pip install numpy pyvista plyfile
+ 
 
