@@ -67,12 +67,8 @@ Adjust configuration parameters if needed
 
 ## Project Structure
 .
-├── lidar_scene_chunk_dashboard.py   # Main script
-├── lidar_dataset1/                  # Input LiDAR .ply files
-│   ├── L001.ply
-│   ├── L002.ply
-│   └── ...
-└── README.md
+<img width="752" height="258" alt="image" src="https://github.com/user-attachments/assets/25883889-445f-4f1c-884b-c96c00b001b6" />
+
 
 ---
 
