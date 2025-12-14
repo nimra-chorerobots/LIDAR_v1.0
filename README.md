@@ -26,7 +26,8 @@ This project splits large `.ply` LiDAR point clouds into **local perception wind
 - Curated display of the most informative chunks
 
 ---
-How It Works
+
+**How It Works**
 1. Load Point Cloud
 
 Reads a .ply file and extracts XYZ coordinates into a NumPy array.
@@ -46,7 +47,9 @@ Remaining points are treated as objects
 
 This split is for visual clarity, not semantic labeling
 
-Visualization Notes
+---
+
+**Visualization Notes**
 
 LiDAR data is inherently 3D.
 Static images often hide depth and geometry, so this project emphasizes runtime interactive visualization.
@@ -59,7 +62,9 @@ Inspect multiple chunks
 
 Adjust configuration parameters if needed
 
-Project Structure
+---
+
+**Project Structure**
 .
 ├── lidar_scene_chunk_dashboard.py   # Main script
 ├── lidar_dataset1/                  # Input LiDAR .ply files
