@@ -62,13 +62,6 @@ Adjust configuration parameters if needed
 
 ---
 
-## Project Structure
-.
-<img width="752" height="258" alt="image" src="https://github.com/user-attachments/assets/25883889-445f-4f1c-884b-c96c00b001b6" />
-
-
----
-
 ## Requirements
 
 - Python 3.9+ (tested with Python 3.11)
