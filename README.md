@@ -12,9 +12,6 @@ This project splits large `.ply` LiDAR point clouds into **local perception wind
 - **Objects** above ground are **colored by height**
 - Visualization is **interactive** (rotate / zoom / pan)
 
-> ℹ️ This repository focuses on **perception-stage visualization** only.  
-> It does **not** include model training, detection, or evaluation.
-
 ---
 
 ## Features
