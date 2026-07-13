@@ -4,7 +4,7 @@
 
 This repository provides an interactive LiDAR perception pipeline for robotics and autonomous systems. It processes large **LiDAR point clouds** stored in `.ply` format by dividing them into smaller local perception windows, separating ground from elevated objects, and visualizing each region in an interactive 3D viewer.
 
-The project is designed for qualitative scene inspection, perception research, and preparation for downstream tasks such as obstacle detection, mapping, navigation, and sensor fusion.
+Unlike traditional perception pipelines that generate static outputs, this project focuses on **interactive qualitative visualization**, allowing users to explore LiDAR scenes dynamically for perception research, robotics development, and autonomous navigation.
 
 ---
 
@@ -19,10 +19,10 @@ The pipeline performs:
 - LiDAR point-cloud loading
 - XYZ coordinate extraction
 - Scene chunking and windowing
-- Ground and object separation
+- Ground–object separation
 - Height-based object coloring
 - Interactive 3D visualization
-- Selection of informative local perception windows
+- Selection of representative local perception windows
 
 The repository is intended for:
 
@@ -30,7 +30,7 @@ The repository is intended for:
 - Robotics education
 - Dataset exploration
 - Autonomous navigation research
-- Preprocessing before machine learning
+- Point-cloud preprocessing
 - Sensor fusion development
 
 ---
@@ -43,8 +43,8 @@ The repository is intended for:
 - Perform simple ground–object separation
 - Color elevated objects according to height
 - Interactive PyVista visualization
-- Curated display of representative scene chunks
-- Runtime inspection using rotation, zooming, and panning
+- Runtime exploration using rotation, zooming, and panning
+- Lightweight qualitative perception analysis
 
 ---
 
@@ -119,62 +119,40 @@ Within each local chunk:
 - Ground points are displayed in **gray**.
 - Elevated points are color-coded according to their height.
 
-> **Note:** This method is intended for visualization and qualitative inspection only. It is not a semantic segmentation or production-grade ground extraction algorithm.
+> **Note:** This approach is intended for visualization and qualitative inspection. It is not a semantic segmentation or production-grade ground extraction algorithm.
 
 ---
 
 ## 4️⃣ Interactive Visualization
 
-Each selected chunk is displayed in an interactive PyVista window.
+Each selected perception window is rendered using **PyVista**, providing a fully interactive 3D environment for scene exploration.
 
-Supported interactions include:
+The visualization supports:
 
 - Rotation
 - Zooming
 - Panning
 - Multi-angle inspection
 - Depth perception
+- Interactive exploration of local scene geometry
 
 ---
 
-# 🖼 Example Results
+# 🖥 Interactive Visualization
 
-*(Insert screenshots of your LiDAR visualization here.)*
+Unlike conventional computer vision projects that generate static output images, this repository provides a **live interactive visualization experience**.
 
-Recommended images:
+During execution, the pipeline automatically:
 
-- Original Point Cloud
-- Scene Chunking
-- Ground vs Object Separation
-- Interactive 3D Visualization
+- Loads the LiDAR point cloud
+- Generates local perception windows
+- Separates ground from elevated objects
+- Applies height-based coloring
+- Opens interactive PyVista visualization windows
 
----
+Users can freely rotate, zoom, and inspect each perception chunk in real time, providing a much deeper understanding of the scene geometry than static screenshots.
 
-# 🖥 Visualization Notes
-
-LiDAR data is inherently three-dimensional, making interactive visualization significantly more informative than static images.
-
-For the best experience:
-
-- Rotate the scene from different viewpoints
-- Zoom into dense object regions
-- Inspect multiple scene chunks
-- Adjust chunk size and overlap parameters
-- Modify the ground threshold if necessary
-
----
-
-# 📈 Representative Results
-
-The visualization demonstrates:
-
-- Efficient scene chunking
-- Clear separation between ground and elevated structures
-- Consistent height-based visualization
-- Improved local scene interpretability
-- Interactive exploration of LiDAR geometry
-
-The displayed windows represent only a subset of the complete point cloud, allowing users to focus on informative regions while maintaining computational efficiency.
+The number of displayed scene chunks can be configured within the source code, allowing representative regions to be explored without rendering the complete point cloud.
 
 ---
 
@@ -209,7 +187,7 @@ Interactive 3D Viewer
 
 - PLY point-cloud loading
 - Scene chunking
-- Ground separation
+- Ground–object separation
 - Height-based object coloring
 - Interactive 3D visualization
 - Local perception window generation
@@ -222,7 +200,7 @@ Interactive 3D Viewer
 - Euclidean obstacle clustering
 - 3D bounding-box generation
 - Real-time LiDAR streaming
-- Camera-LiDAR sensor fusion
+- Camera–LiDAR sensor fusion
 - Obstacle tracking
 - Navigation safety output
 
@@ -261,13 +239,13 @@ git clone https://github.com/nimra-chorerobots/chore-lidar-perception.git
 cd chore-lidar-perception
 ```
 
-Install dependencies:
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-or
+or manually:
 
 ```bash
 pip install numpy pyvista plyfile
@@ -294,11 +272,15 @@ plyfile
 
 # ▶️ Running the Project
 
+Run the visualization pipeline:
+
 ```bash
 python src/lidar_visualization.py
 ```
 
 Update the input `.ply` file path inside the script before execution.
+
+During runtime, interactive visualization windows will automatically open, allowing exploration of the generated perception chunks.
 
 ---
 
@@ -314,6 +296,7 @@ This visualization pipeline can be used for:
 - Educational demonstrations
 - Digital twin visualization
 - Autonomous vehicle research
+- Interactive perception debugging
 
 ---
 
@@ -325,10 +308,15 @@ Future versions of this repository will include:
 - Object clustering
 - Dynamic obstacle detection
 - Multi-sensor fusion
-- ROS 2 nodes
+- ROS 2 integration
 - NVIDIA Isaac Sim integration
 - Real-time LiDAR processing
 - Occupancy mapping
 - SLAM integration
+- Autonomous navigation support
 
- 
+---
+
+# 📄 License
+
+This project is released under the **MIT License**.
