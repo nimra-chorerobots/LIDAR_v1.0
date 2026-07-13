@@ -315,8 +315,4 @@ Future versions of this repository will include:
 - SLAM integration
 - Autonomous navigation support
 
----
-
-# 📄 License
-
-This project is released under the **MIT License**.
+ 
